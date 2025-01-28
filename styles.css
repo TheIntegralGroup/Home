@@ -1,0 +1,447 @@
+/* Variables de colores */
+:root {
+    --color-primary: #014ab0;       /* Azul principal */
+    --color-secondary: #ff6b6b;    /* Rojo coral para acentos */
+    --color-background: #1a1a1a;   /* Fondo oscuro */
+    --color-text: #ffffff;         /* Texto blanco */
+    --color-text-secondary: #cccccc; /* Texto gris claro */
+    --color-card-background: #0202028c; /* Fondo de tarjetas */
+    --color-button-hover: #013a8a;  /* Azul más oscuro para hover */
+    --color-border: #014ab0;        /* Borde azul */
+}
+
+/* Estilos para el carrusel */
+.swiper {
+    width: 100%!important;
+}
+
+.swiper-slide {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* Estilos para los botones de navegación */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--color-primary)!important;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición exacta */
+    width: 40px; /* Ancho de los botones */
+    height: 40px; /* Alto de los botones */
+    border-radius: 50%; /* Forma circular */
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: var(--color-text)!important;
+}
+
+/* Posición específica para cada botón */
+.swiper-button-next {
+    right: 10px!important; /* Distancia desde el borde derecho */
+}
+
+.swiper-button-prev {
+    left: 10px!important; /* Distancia desde el borde izquierdo */
+}
+
+/* Paginación */
+.swiper-pagination {
+    position: relative!important;
+    margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-text-secondary)!important;
+    opacity: 0.5!important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-primary)!important;
+    opacity: 1!important;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: var(--color-text);
+}
+
+p {
+    color: var(--color-text-secondary);
+}
+
+/* Estilos para la sección de inicio */
+#inicio {
+    background-image: url('https://vrand.biz/wp-content/uploads/2022/07/bench-accounting-C3V88BOoRoM-unsplash.jpg?id=74');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 350px 20px;
+    text-align: center;
+    position: relative;
+    color: var(--color-text);
+}
+
+#inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para mejorar la legibilidad */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Estilos para los botones de inicio */
+.botones-inicio {
+    display: flex;
+    justify-content: center;
+}
+
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Navegación */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.8);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+nav img{
+    display: flex;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+    padding-left: 20px; /* Añade espacio a la izquierda del logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-right: 20px; /* Añade espacio a la derecha del texto */
+}
+
+.nav-links a {
+    color: var(--color-text);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Estilos para la sección de servicios */
+#servicios {
+    padding: 80px 20px;
+    background: linear-gradient(312deg, rgba(1, 74, 176, 0.8), /* Color principal con transparencia */ 
+    rgb(31 1 176 / 60%) /* Color principal con menos transparencia */);
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+#servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: center;
+}
+
+/* Estilos para las tarjetas de servicios */
+.services-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.swiper-wrapper {
+    align-items: center;
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque para las tarjetas */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+/* Estilos para la sección "Sobre Nosotros" */
+#sobre-nosotros {
+    padding: 80px 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+#sobre-nosotros h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#sobre-nosotros p {
+    font-size: 26px;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+    padding: 0px 300px;
+}
+
+/* Estilos para la sección "Referencias" */
+#referencias {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(1, 74, 176, 0.8), /* Color principal con transparencia */
+     rgb(31 1 176 / 60%) /* Color principal con menos transparencia */);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+#referencias h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#referencias p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+}
+
+/* Estilos para las tarjetas de trabajos anteriores */
+.trabajos-anteriores {
+    max-width: 1200px; /* Aumenta el ancho máximo */
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.trabajos-anteriores h3 {
+    font-size: 2rem;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    text-align: center; /* Centra el título */
+}
+
+.tarjeta {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-card-background);
+    border-radius: 10px;
+    padding: 30px; /* Aumenta el padding para hacer las tarjetas más grandes */
+    margin-bottom: 40px; /* Aumenta el margen inferior */
+    transition: transform 0.3s ease;
+}
+
+.tarjeta.reverse {
+    flex-direction: row-reverse; /* Alterna la posición de la imagen y el texto */
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta img {
+    width: 300px; /* Aumenta el tamaño de la imagen */
+    height: 200px; /* Ajusta la altura */
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 30px; /* Espacio entre la imagen y el texto */
+}
+
+.tarjeta.reverse img {
+    margin-right: 0; /* Elimina el margen derecho en tarjetas invertidas */
+    margin-left: 30px; /* Añade margen izquierdo */
+}
+
+.tarjeta .contenido {
+    flex: 1;
+}
+
+.tarjeta h4 {
+    font-size: 1.8rem; /* Aumenta el tamaño del título */
+    color: var(--color-text);
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    font-size: 1.1rem; /* Aumenta el tamaño del texto */
+    color: var(--color-text-secondary);
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+    padding: 80px 20px;
+    background-color: var(--color-background);
+    text-align: center;
+}
+
+#contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contacto p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.red-social {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--color-card-background);
+    border-radius: 5px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.red-social:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.red-social i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Estilos para el formulario de contacto */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    background-color: var(--color-card-background);
+    color: var(--color-text);
+}
+
+form button {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Pie de Página */
+footer {
+    background-color: var(--color-card-background);
+    padding: 20px;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+footer p {
+    margin: 0;
+}
