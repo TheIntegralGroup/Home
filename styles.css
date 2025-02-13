@@ -196,8 +196,8 @@ nav img{
     color: var(--color-primary);
 }
 
-/* Estilos para la sección de servicios */
-#servicios {
+/* Estilos para la sección de paquetes */
+#paquetes {
     padding: 80px 20px;
     background: linear-gradient(312deg, rgba(1, 74, 176, 0.8), /* Color principal con transparencia */ 
     rgb(31 1 176 / 60%) /* Color principal con menos transparencia */);
@@ -206,14 +206,13 @@ nav img{
     border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
 }
 
-#servicios h2 {
+#paquetes h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--color-text);
     text-align: center;
 }
 
-/* Estilos para las tarjetas de servicios */
 .services-grid {
     display: flex;
     justify-content: center;
@@ -253,6 +252,45 @@ nav img{
     color: var(--color-text-secondary);
 }
 
+.service-card ul {
+    list-style: none; /* Quitamos las viñetas predeterminadas */
+    padding: 0;
+    margin: 10px 0;
+}
+
+.service-card ul li {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 8px 0;
+    padding-left: 4px;
+    font-size: 1rem;
+    color: var(--color-text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea separadora */
+}
+
+.service-card ul li:last-child {
+    border-bottom: none; /* Quitamos la línea del último elemento */
+}
+
+/* Ícono para cada ítem de la lista */
+.service-card ul li::before {
+    content: "✔"; /* Usamos un checkmark como viñeta */
+    color: var(--color-accent, #4CAF50); /* Color de resaltado */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Estilos para los textos explicativos dentro de las listas */
+.service-card ul p {
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    margin-bottom: 5px;
+    display: block;
+}
+
+
 /* Estilos para la sección "Sobre Nosotros" */
 #sobre-nosotros {
     padding: 80px 20px;
@@ -275,7 +313,7 @@ nav img{
 }
 
 /* Estilos para la sección "Referencias" */
-#referencias {
+#referencia {
     padding: 80px 20px;
     background: linear-gradient(135deg, rgba(1, 74, 176, 0.8), /* Color principal con transparencia */
      rgb(31 1 176 / 60%) /* Color principal con menos transparencia */);
@@ -285,25 +323,25 @@ nav img{
     text-align: center;
 }
 
-#referencias h2 {
+#referencia h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-#referencias p {
+#referencia p {
     font-size: 1.2rem;
     color: var(--color-text-secondary);
     margin-bottom: 40px;
 }
 
 /* Estilos para las tarjetas de trabajos anteriores */
-.trabajos-anteriores {
+.ejemplos {
     max-width: 1200px; /* Aumenta el ancho máximo */
     margin: 0 auto 40px;
     text-align: left;
 }
 
-.trabajos-anteriores h3 {
+.ejemplos h3 {
     font-size: 2rem;
     color: var(--color-text);
     margin-bottom: 20px;
@@ -444,4 +482,141 @@ footer {
 
 footer p {
     margin: 0;
+}
+/* ---- ESTILOS RESPONSIVE ---- */
+
+/* Tablets (pantallas menores a 1024px) */
+@media (max-width: 1024px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobre-nosotros p {
+        padding: 0 40px;
+    }
+
+    .tarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tarjeta img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .tarjeta.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tarjeta.reverse img {
+        margin-left: 0;
+    }
+}
+
+/* Móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    /* ---- NAV RESPONSIVO ---- */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: none; /* Ocultamos los links en móviles */
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostramos el menú cuando está activo */
+    }
+
+    /* ---- SECCIÓN INICIO ---- */
+    #inicio {
+        padding: 150px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .botones-inicio {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        font-size: 1.5rem;
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    /* ---- SECCIÓN SOBRE NOSOTROS ---- */
+    #sobre-nosotros p {
+        padding: 0 20px;
+        font-size: 1rem;
+    }
+
+    /* ---- TARJETAS Y SERVICIOS ---- */
+    .swiper-button-next, .swiper-button-prev {
+        display: none!important;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* ---- REDES SOCIALES ---- */
+    .redes-sociales {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .red-social {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+/* Móviles pequeños (menores a 480px) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 1.3rem;
+        width: 90%;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .tarjeta h4 {
+        font-size: 1.5rem;
+    }
+
+    .tarjeta p {
+        font-size: 1rem;
+    }
 }
